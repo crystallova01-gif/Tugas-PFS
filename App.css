@@ -1,0 +1,131 @@
+:root {
+    --bg-main: #E8F9FD;
+    --card-bg: #FFFFFF;
+    --text-main: #2E3A59;
+    --border-main: #CDEFF5;
+    --prio-high: #FF6B6B;
+    --prio-medium: #FFA559;
+    --prio-low: #4ECDC4;
+    --status-main: #3AB0FF;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-main);
+    border-radius: 16px;
+    color: var(--text-main);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+    background-color: var(--card-bg);
+    border-color: var(--border-main);
+}
+
+.list-group-item.bg-dark {
+    background-color: var(--text-main) !important;
+    color: var(--card-bg) !important;
+    border-color: var(--text-main) !important;
+}
+
+.priority-text-High {
+    color: var(--prio-high) !important;
+    font-weight: bold;
+}
+
+.priority-text-Medium {
+    color: var(--prio-medium) !important;
+    font-weight: bold;
+}
+
+.priority-text-Low {
+    color: var(--prio-low) !important;
+    font-weight: bold;
+}
+
+.status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.status-todo {
+    border-color: var(--status-main);
+}
+
+.status-in-progress {
+    border-color: var(--status-main);
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+.status-done {
+    border-color: var(--prio-low);
+    background-color: var(--prio-low);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-outline-info {
+    color: var(--status-main) !important;
+    border-color: var(--status-main) !important;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-info:hover {
+    background-color: var(--status-main) !important;
+    color: var(--card-bg) !important;
+}
+
+.btn-outline-danger {
+    color: var(--prio-high) !important;
+    border-color: var(--prio-high) !important;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--prio-high) !important;
+    color: var(--card-bg) !important;
+}
+
+.badge.bg-secondary {
+    background-color: var(--border-main) !important;
+    color: var(--text-main) !important;
+}
+
+.btn-success {
+    background-color: var(--prio-low) !important;
+    border-color: var(--prio-low) !important;
+    color: white !important;
+    font-weight: 500;
+}
+
+.btn-secondary {
+    background-color: var(--status-main) !important;
+    border-color: var(--status-main) !important;
+    color: white !important;
+}
